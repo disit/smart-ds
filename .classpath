@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/jdk1.7.0_45">
+		<attributes>
+			<attribute name="owner.project.facets" value="java"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="con" path="org.eclipse.jst.server.core.container/org.eclipse.jst.server.tomcat.runtimeTarget/Apache Tomcat v7.0">
+		<attributes>
+			<attribute name="owner.project.facets" value="jst.web"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
+	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
+	<classpathentry kind="lib" path="src/asm-3.1.jar"/>
+	<classpathentry kind="lib" path="src/com.mysql.jdbc_5.1.5.jar"/>
+	<classpathentry kind="lib" path="src/gson-2.3.1.jar"/>
+	<classpathentry kind="lib" path="src/jackson-lgpl-0.9.4.jar"/>
+	<classpathentry kind="lib" path="src/jersey-client-1.0.3.1.jar"/>
+	<classpathentry kind="lib" path="src/jersey-core-1.0.3.1.jar"/>
+	<classpathentry kind="lib" path="src/jersey-json-1.0.3.1.jar"/>
+	<classpathentry kind="lib" path="src/jersey-server-1.0.3.1.jar"/>
+	<classpathentry kind="lib" path="src/jettison-1.0.1.jar"/>
+	<classpathentry kind="lib" path="src/jsr311-api-1.0.jar"/>
+	<classpathentry kind="lib" path="src/openrdf-sesame-2.8.3-onejar.jar"/>
+	<classpathentry kind="lib" path="src/persistence-api-1.0.2.jar"/>
+	<classpathentry kind="lib" path="src/com.fasterxml.jackson.core.jar"/>
+	<classpathentry kind="lib" path="src/org-apache-commons-codec.jar"/>
+	<classpathentry kind="lib" path="src/org-apache-commons-logging.jar"/>
+	<classpathentry kind="lib" path="src/slf4j-api-1.7.12.jar"/>
+	<classpathentry kind="lib" path="src/slf4j-simple-1.7.12.jar"/>
+	<classpathentry kind="lib" path="src/httpcore-4.4.jar"/>
+	<classpathentry kind="lib" path="src/httpclient-4.4.jar"/>
+	<classpathentry kind="lib" path="src/httpclient-cache-4.4.jar"/>
+	<classpathentry kind="output" path="build/classes"/>
+</classpath>
