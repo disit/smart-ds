@@ -30,4 +30,5 @@ public interface UserDBInterface {
 	//public Permit[] getPermits();
 	public boolean modifyUser(String email, String password, String name, String country);
 	public boolean modifyUserType(int userId, int type);
+	public User mapLdapUser(String userName, String userType, int ldapUserId);
 }

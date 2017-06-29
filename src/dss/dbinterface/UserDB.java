@@ -106,6 +106,11 @@ public class UserDB implements UserDBInterface {
 		return MySQLDBManager.getInstance().update("INSERT INTO user(name,email,country, password, userType) VALUES ('"+name+"','"+email+"','"+country+"','"+password+"','"+userType+"')");
 	}
 	
+	public boolean registerLdapUser(int id, String name, String email, String country, String password, int userType)
+	{
+		return MySQLDBManager.getInstance().update("INSERT INTO user(id, name,email,country, password, userType) VALUES ("+id+", '"+name+"','"+email+"','"+country+"','"+password+"','"+userType+"')");
+	}
+	
 	@Override
 	public boolean checkUserAlreadyPresent(String email_register)
 	{
@@ -143,4 +148,41 @@ public class UserDB implements UserDBInterface {
 		System.out.println("Id modificata dalla query: " + id);
 		return MySQLDBManager.getInstance().update("UPDATE user SET userType='"+type+"' WHERE id='"+id+"'");
 	}
+	
+	public User mapLdapUser (String userName, String userType, int ldapUserId)
+	{
+		User user = null;
+		String email = userName;
+		int userTypeId = -1;
+		
+		if(userType.equals("Observer")) {
+			userTypeId = 1;
+			user = new UserBasic(userName, email, "", ldapUserId, userTypeId);
+		}
+		if(userType.equals("Manager"))
+		{
+			userTypeId = 2;
+			user = new UserAdvanced(userName, email, "", ldapUserId, userTypeId);
+		}
+		if(userType.equals("AreaManager"))
+		{
+			userTypeId = 3;
+			user = new DecisionMaker(userName, email, "", ldapUserId, userTypeId);
+		}
+		if(userType.equals("ToolAdmin"))
+		{	
+			userTypeId = 4;
+			user = new Administrator(userName, email, "", ldapUserId, userTypeId);
+		}
+
+		if(!checkUserAlreadyPresent(email)) {
+			registerLdapUser(ldapUserId, userName, email, "Italy", "", userTypeId);
+		} else {
+		//	user = retrieveUser(email, "LDAP");
+		}
+		
+		return user;
+		
+	}
+	
 }
